@@ -2,7 +2,7 @@
 
 source wlenv/bin/activate
 
-cd /var/lib/jenkins/workspace/wanebu-backend-login-ms/app
+cd /var/lib/jenkins/workspace/wanebu-backend-login-cicd/login_ms
 
 python3 manage.py makemigrations
 python3 manage.py migrate
