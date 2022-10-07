@@ -1,0 +1,9 @@
+django
+django-filter
+django-extensions
+gunicorn
+djangorestframework
+urllib3
+twilio
+numpy
+firebase_admin
