@@ -6,7 +6,7 @@ After=network.target
 User=root
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/wanebu-backend-login-cicd
-ExecStart=/var/lib/jenkins/workspace/wanebu-backend-login-cicd/wenv/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/wanebu-backend-login-cicd/error.log --workers 3 --bind unix:/run/gunicorn.sock --capture-output --log-level debug login_ms.wsgi:application
+ExecStart=/var/lib/jenkins/workspace/wanebu-backend-login-cicd/wlenv/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/wanebu-backend-login-cicd/error.log --workers 3 --bind unix:/run/gunicorn.sock --capture-output --log-level debug login_ms.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
