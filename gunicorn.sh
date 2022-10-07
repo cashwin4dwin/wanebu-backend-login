@@ -10,7 +10,7 @@ python3 manage.py collectstatic -- no-input
 
 echo "Migrations done"
 
-cd /var/lib/jenkins/workspace/wanebu-backend-login-ms
+cd /var/lib/jenkins/workspace/wanebu-backend-login-cicd
 
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
