@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo cp -rf wanebu-backend-login.conf /etc/nginx/sites-available/wanebu-backend-login
-chmod 710 /var/lib/jenkins/workspace/wanebu-backend-new-cicd
+chmod 710 /var/lib/jenkins/workspace/wanebu-backend-login
 
 sudo ln -sf /etc/nginx/sites-available/wanebu-backend-login /etc/nginx/sites-enabled
 
