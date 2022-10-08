@@ -132,7 +132,6 @@ class UsersLoginDetailedView(generics.RetrieveUpdateDestroyAPIView):
     filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['device_id','name_page_done','login_state','location_page_done','cold_start_done']
     search_fields = ['user_phone']
-    permission_classes = (IsAuthenticated,)
 
 class UsersLoginListView(generics.ListCreateAPIView): # TODO: Need to add auth for this section of APIs
     serializer_class = LoginUserSerializerNoSMSNumber
@@ -140,7 +139,6 @@ class UsersLoginListView(generics.ListCreateAPIView): # TODO: Need to add auth f
     filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['user_device_id','name_page_done','login_state','location_page_done','cold_start_done']
     search_fields = ['user_phone']
-    permission_classes = (IsAuthenticated,)
 
 
 @api_view(['GET','POST'])
