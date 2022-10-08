@@ -11,6 +11,8 @@ echo "Migrations done"
 
 cd /var/lib/jenkins/workspace/wanebu-backend-login-cicd
 
+sudo -i
+
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
 
