@@ -1,11 +1,12 @@
 [Unit]
 Description=gunicorn daemon
+Requires=gunicorn.socket
 After=network.target
 
 [Service]
 User=root
 Group=www-data
-WorkingDirectory=/var/lib/jenkins/workspace/wanebu-backend-login-cicd
+WorkingDirectory=/var/lib/jenkins/workspace/wanebu-backend-login-cicd/login_ms
 ExecStart=/var/lib/jenkins/workspace/wanebu-backend-login-cicd/wlenv/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/wanebu-backend-login-cicd/error.log --workers 3 --bind unix:/run/gunicorn.sock --capture-output --log-level debug login_ms.wsgi:application
 
 [Install]
