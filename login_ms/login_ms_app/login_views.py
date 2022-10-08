@@ -44,14 +44,14 @@ def logedin_user_list(request):
             login_user = UserLogin.objects.get(user_phone=request.data["user_phone"])
             login_user.sms_number = smsNumber
             login_user.save()
-            serializer2 = LoginUserSerializerNoSMSNumber(login_user)
+            serializer2 = LoginUserSerializer(login_user)
             return Response(serializer2.data,status=status.HTTP_200_OK)
         else:
             serializser = LoginUserSerializer(data=request.data)
             if serializser.is_valid():
                 serializser.save()
                 login_user = UserLogin.objects.get(user_phone=request.data["user_phone"])
-                serializer2 = LoginUserSerializerNoSMSNumber(login_user)
+                serializer2 = LoginUserSerializer(login_user)
                 return Response(serializer2.data,status=status.HTTP_200_OK)
             else:
                 return Response(status=status.HTTP_400_BAD_REQUEST)
