@@ -134,7 +134,7 @@ class UsersLoginDetailedView(generics.RetrieveUpdateDestroyAPIView):
     search_fields = ['user_phone']
 
 class UsersLoginListView(generics.ListCreateAPIView): # TODO: Need to add auth for this section of APIs
-    serializer_class = LoginUserSerializerNoSMSNumber
+    serializer_class = LoginUserSerializer
     queryset = UserLogin.objects.all()
     filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['user_device_id','name_page_done','login_state','location_page_done','cold_start_done']
